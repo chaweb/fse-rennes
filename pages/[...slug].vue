@@ -68,7 +68,7 @@ main {
     background: #fff;
     .dark-mode &{
             color: #fff;
-            background: #420606;
+            background: #280404;
     }
 
     width: 100vw;
@@ -132,7 +132,7 @@ main {
 
         .dark-mode &{
             color: #fff;
-            background: #420606;
+            background: #280404;
         }
     }
 
@@ -185,7 +185,7 @@ html, body {
 
     .dark-mode &{
         color: #fff;
-        background: #420606;
+        background: #280404;
     }
 }
 
