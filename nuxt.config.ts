@@ -41,5 +41,5 @@ export default defineNuxtConfig({
         '@nuxtjs/color-mode'
     ],
 
-    ssr: false, 
+    ssr: false,  
 })
