@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
 
     app: {    
+        baseURL: '/fse-rennes/',
         head: {      
             charset: 'utf-8',      
             viewport: 'width=500, initial-scale=1',      
@@ -40,8 +41,5 @@ export default defineNuxtConfig({
         '@nuxtjs/color-mode'
     ],
 
-    ssr: false,  
-    nitro: {    
-        preset: 'service-worker'
-    }
+    ssr: false, 
 })
