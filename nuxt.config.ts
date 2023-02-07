@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
 
     app: {
+        baseURL: '/fse-rennes/',
         head: {      
             charset: 'utf-8',      
             viewport: 'width=500, initial-scale=1',      
