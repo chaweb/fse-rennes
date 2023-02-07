@@ -39,4 +39,8 @@ export default defineNuxtConfig({
         '@nuxtjs/device',
         '@nuxtjs/color-mode'
     ],
+    ssr: false, 
+    nitro: {
+        preset: 'service-worker'
+    }
 })
