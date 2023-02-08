@@ -5,18 +5,19 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@nuxt/content": "^2.4.3",
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/device": "^3.0.0",
     "nuxt": "^3.1.1",
-    "push-dir": "^0.4.1",
     "sass": "^1.57.1",
     "sass-loader": "^13.2.0"
   },
   "dependencies": {
+    "gh-pages": "^5.0.0",
     "gh-pages-deploy": "^0.5.1"
   }
 }
