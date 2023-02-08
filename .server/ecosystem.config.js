@@ -4,6 +4,6 @@ module.exports = {
         port: '1080',
         exec_mode: 'cluster',
         instances: 'max',
-        script: './.output/server/index.mjs',
+        script: '/index.mjs',
     }]
 }
