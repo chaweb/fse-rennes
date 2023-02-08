@@ -1,10 +1,9 @@
 module.exports = {  
         apps: [{
         name: 'test.chaweb.fr',
-        port: '3000',
+        port: '1080',
         exec_mode: 'cluster',
-        instances: '1',
+        instances: 'max',
         script: './.output/server/index.mjs',
-        arg:"preview"
     }]
 }

@@ -40,7 +40,10 @@ export default defineNuxtConfig({
         '@nuxtjs/device',
         '@nuxtjs/color-mode'
     ],
+    devServer:{
+        port:1080
+    },
     nitro:{
-        preset: 'node-cluster'
+        preset: 'node_cluster' 
     }
 })
