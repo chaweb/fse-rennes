@@ -4,14 +4,14 @@
         <img src="/fseRennes.png" alt="logo de la fse de Rennes" class="nav__icon">
         <navButton to="/">Rennes</navButton>
         <navButton to="/adhesion">adhésion</navButton>
-        <navButton to="/cas">Fac beaulieu</navButton>
+        <navButton to="/cas">Fac&#8239beaulieu</navButton>
         <navButton to="/csr">CSR</navButton>
 
         <div class="nav__color">
             <select v-model="$colorMode.preference">
-                <option value="system">System</option>
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
+                <option value="system">system</option>
+                <option value="light">lumineux</option>
+                <option value="dark">sombre</option>
             </select>
         </div>
     </nav>
@@ -58,7 +58,7 @@
 
 
 main {
-    @media (min-width: 769px) {
+    @media (min-width: 1200px) {
         padding-top:100px;
     }
 }
@@ -76,7 +76,7 @@ main {
     &__icon{
         width: 100px;
     }
-    @media (min-width: 769px) {
+    @media (min-width: 1200px) {
         height: 100px;
         position: fixed;
 
@@ -84,7 +84,7 @@ main {
 
     align-items: center;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1200px) {
         padding: 5px 0;
         flex-direction: column;
     }
@@ -96,17 +96,55 @@ main {
     border-bottom: #d60001 solid 4px;
 
     &__color{
-        padding: 0 50px;
-        margin-left: auto;
-
-        select {
-            padding: 10px;
-            border: 0;
-
-            margin: 0 10px;
-            font-weight: bold;
-            font-size: 1em;
+        position: relative;
+        margin: 0 20px 0 auto;
+        @media (max-width: 1200px) {
+            margin: 20px auto;
         }
+        &::before {
+            border-radius: 15px;
+            content: "\f13a";
+            font-family: FontAwesome;
+            position: absolute;
+            top: 0;
+            right: 0%;
+            width: 20%;
+            height: 100%;
+            text-align: center;
+            font-size: 28px;
+            line-height: 45px;
+            color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(255, 255, 255, 0.1);
+            pointer-events: none;
+        }
+
+        &:hover::before {
+            color: rgba(255, 255, 255, 0.6);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        select {
+            border-radius: 15px;
+            background-color: #c21d04;
+            color: white;
+            padding: 12px;
+            width: 250px;
+            border: none;
+            font-size: 20px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            appearance: button;
+            outline: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            text-indent: 1px;
+            text-overflow: '';
+            option{
+                border-radius: 15px;
+            }
+            
+        }
+
+        
+
     }
 
 }
@@ -174,6 +212,7 @@ main {
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,600;0,700;0,900;1,500&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://fonts.cdnfonts.com/css/kollektif');
 main{
     font-family: 'Montserrat', sans-serif;
