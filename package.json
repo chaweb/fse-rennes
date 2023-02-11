@@ -1,11 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt build",
+    "build": "nuxt build && node deploy/copypast.js",
     "dev": "nuxt dev --port 80",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "deploy": "push-dir --dir=.output --branch=ServerSide --cleanup && node deploy/copypast.js",
+    "deploy": "push-dir --dir=.output --branch=ServerSide --cleanup ",
     "testCopy": "node deploy/copypast.js"
   },
   "devDependencies": {
