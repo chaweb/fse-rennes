@@ -3,11 +3,10 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev --port 80",
-    "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "deploy": "gh-pages -d dist",
-    "testServer": "push-dir --dir=.output --branch=ServerSide --cleanup"
+    "deploy": "push-dir --dir=.output --branch=ServerSide --cleanup && node deploy/copypast.js",
+    "testCopy": "node deploy/copypast.js"
   },
   "devDependencies": {
     "@nuxt/content": "^2.4.3",
@@ -19,6 +18,8 @@
     "sass-loader": "^13.2.0"
   },
   "dependencies": {
+    "fs": "^0.0.1-security",
+    "fs-extra": "^11.1.0",
     "gh-pages": "^5.0.0",
     "gh-pages-deploy": "^0.5.1"
   }
