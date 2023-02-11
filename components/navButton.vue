@@ -13,6 +13,7 @@ export default {
 <style lang="scss" scoped>
 
 .button{
+    white-space: nowrap;
     .dark-mode &{
         color: #fff;
     }

@@ -4,7 +4,7 @@
         <img src="/fseRennes.png" alt="logo de la fse de Rennes" class="nav__icon">
         <navButton to="/">Rennes</navButton>
         <navButton to="/adhesion">adhésion</navButton>
-        <navButton to="/cas">Fac&#8239beaulieu</navButton>
+        <navButton to="/cas">Fac beaulieu</navButton>
         <navButton to="/csr">CSR</navButton>
 
         <div class="nav__color">
@@ -48,11 +48,15 @@
 </main>
 </template>
 
+//script
+
 <script setup>
 
     const colorMode = useColorMode()
 
 </script>
+
+//style of the main page
 
 <style lang="scss" scoped>
 
@@ -64,11 +68,11 @@ main {
 }
 
 
-.nav{
+.nav{ 
     background: #fff;
     .dark-mode &{
             color: #fff;
-            background: #280404;
+            background: $backcolor__dark;
     }
 
     width: 100vw;
@@ -170,7 +174,7 @@ main {
 
         .dark-mode &{
             color: #fff;
-            background: #280404;
+            background: $backcolor__dark;
         }
     }
 
@@ -210,10 +214,13 @@ main {
 </style>
 
 
+//global style of pages
+
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,600;0,700;0,900;1,500&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://fonts.cdnfonts.com/css/kollektif');
+
 main{
     font-family: 'Montserrat', sans-serif;
 }
@@ -224,27 +231,35 @@ html, body {
 
     .dark-mode &{
         color: #fff;
-        background: #280404;
+        background: $backcolor__dark;
+    }
+}
+</style>
+
+//global style no-scoped of contents
+
+<style lang="scss">
+.content{
+    h1, h2 {
+        text-align: center;
+        font-family: 'Kollektif', sans-serif;
+    }
+    h1{
+        font-size: 2.5rem;
+    }
+    h2{
+        font-size: 2rem;
+    }
+
+    a{
+        color: #000;
+
+        font-weight: bold;
+
+        .dark-mode &{
+            color: #fff;
+        }
     }
 }
 
-h1, h2 {
-    text-align: center;
-    font-family: 'Kollektif', sans-serif;
-}
-h1{
-    font-size: 2.5rem;
-}
-h2{
-    font-size: 2rem;
-}
-
-a{
-    color: #000;
-
-
-    .dark-mode &{
-        color: #fff
-    }
-}
 </style>

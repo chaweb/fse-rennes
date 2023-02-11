@@ -1,9 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-
+    vite: {
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    additionalData: '@import "@/assets/style/global.scss";',
+                },
+            },
+        },
+    },
     app: {
         baseURL: '/fse-rennes/',
-        head: {      
+        head: {
+            htmlAttrs:{lang:"fr"},
             charset: 'utf-8',      
             viewport: 'width=500, initial-scale=1',      
             title: 'fse web site',      
@@ -45,5 +54,7 @@ export default defineNuxtConfig({
     },
     nitro:{
         preset: 'node_cluster' 
-    }
+    },
+
+    
 })
