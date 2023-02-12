@@ -1,0 +1,107 @@
+/* detecte la taille de l'écran en largueur
+ * @param {String="±sm,±md,±lg,±xl,±2xl"} screen
+ *
+ * ordre de grandeur :
+ * |---------------------------|------------------|------------------|
+ * |  petit ecran (impossible) |  [ - ; 640]      | -sm              |
+ * |---------------------------|------------------|------------------|
+ * |  smartphone               |  [640; 768]      | [+sm ; -md]      |
+ * |---------------------------|------------------|------------------|
+ * |  tablette                 |  [768 ; 1024]    | [+md ; -lg]      |
+ * |---------------------------|------------------|------------------|
+ * |  petit écran              |  [1024 ; 1280]   | [+lg ; -xl]      |
+ * |---------------------------|------------------|------------------|
+ * |  ecran pc                 |  [1280 ; 1536]   | [+xl ; -2xl]     |
+ * |---------------------------|------------------|------------------|
+ * |  télévision               |  [1536 ; +]      |+2xl              |
+ * |---------------------------|------------------|------------------|
+ *
+ */
+    
+@mixin screen($screen : '+lg')
+    @if ($screen == '-sm') 
+        @media (max-width: 640px)
+            @content
+    @if ($screen == '+sm') 
+        @media (min-width: 640px)
+            @content
+
+    @if ($screen == '-md') 
+        @media (max-width: 768px)
+            @content
+    @if ($screen == '+md') 
+        @media (min-width: 768px)
+            @content
+
+    @if ($screen == '-lg') 
+        @media (max-width: 1024px)
+            @content
+    @if ($screen == '+lg') 
+        @media (min-width: 1024px)
+            @content
+
+    @if ($screen == '-xl') 
+        @media (max-width: 1280px)
+            @content
+    @if ($screen == '+xl') 
+        @media (min-width: 1280px)
+            @content
+    @if ($screen == '-2xl') 
+        @media (max-width: 1536px)
+            @content
+    @if ($screen == '+2xl') 
+        @media (min-width: 1536px)
+            @content
+
+/* detecte l'oriantation de l'écran
+ * @param {String="landscape, portrait"} screen
+ */
+//orientation de l'écran
+    //lanscrape : paysage
+    //portrait : portrait.
+@mixin orientation($screen : 'landscape')
+    @if ($screen == 'landscape')
+        @media (orientation: landscape)
+            @content
+    @if ($screen == 'portrait')
+        @media (orientation: portrait)
+            @content
+
+/* flexbox plus pratique, cela met directement les balises qu'il faut
+ * @param {String="center, start, end"} justify
+ * @param {String="center, start, end"} align
+ */
+@mixin flexbox($justify: '',$align: '')
+    display: flex
+
+    @if ($justify == 'center')
+        justify-content: center
+    @if ($justify == 'start')
+        justify-content: start
+    @if ($justify == 'end')
+        justify-content: end
+    @if ($align == 'center')
+        align-items: center
+    @if ($align == 'start')
+        align-items: flex-start
+    @if ($align == 'end')
+        align-items: flex-end
+
+
+
+/* color change dark mode
+ * si la class dark est sur la balise html, cela met le theme sombre
+ * cf : https://color-mode.nuxtjs.org/
+ */
+@mixin dark
+    html.dark-mode &
+        @content
+
+
+/* color change light mode
+ * si la class light est sur la balise html, cela met le theme lumineux
+ * cf : https://color-mode.nuxtjs.org/
+ */
+@mixin light
+    html.light-mode & 
+        @content

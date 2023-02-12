@@ -62,7 +62,7 @@
 
 
 main {
-    @media (min-width: 1200px) {
+    @include screen('+xl') {
         padding-top:100px;
     }
 }
@@ -70,7 +70,7 @@ main {
 
 .nav{ 
     background: #fff;
-    .dark-mode &{
+    @include dark{
             color: #fff;
             background: $backcolor__dark;
     }
@@ -80,29 +80,27 @@ main {
     &__icon{
         width: 100px;
     }
-    @media (min-width: 1200px) {
+    @include screen('+xl') {
         height: 100px;
         position: fixed;
+        top:0;
+        left:0;
 
     }
 
-    align-items: center;
+    @include flexbox('', 'center');
 
-    @media (max-width: 1200px) {
+    @include screen('-xl') {
         padding: 5px 0;
         flex-direction: column;
     }
-    top:0;
-    left:0;
-
-    display: flex;
 
     border-bottom: #d60001 solid 4px;
 
-    &__color{
+    &__color{ ///input color mode
         position: relative;
         margin: 0 20px 0 auto;
-        @media (max-width: 1200px) {
+        @include screen('-xl'){
             margin: 20px auto;
         }
         &::before {
@@ -158,11 +156,9 @@ main {
     height: auto;
 
 
-    display: flex;
+    @include flexbox('', 'center');
 
     flex-direction: column;
-
-    align-items: center;
 
 
     &__article{
@@ -172,13 +168,13 @@ main {
 
         background-color: #fff;
 
-        .dark-mode &{
+        @include dark{
             color: #fff;
             background: $backcolor__dark;
         }
     }
 
-    @media (min-width: 1500px) {
+    @include screen('+2xl') {
         &__network{
             width: 125px;
             position: fixed;
@@ -190,9 +186,9 @@ main {
     }
 
     &__network{
-        display: flex;
+        @include flexbox('', 'center');
+
         margin: 100px 0;
-        align-items: center;
         p {
             margin: 6px 20px;
             
@@ -218,22 +214,21 @@ main {
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,600;0,700;0,900;1,500&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'); //icon font awesome
 @import url('https://fonts.cdnfonts.com/css/kollektif');
 
-main{
-    font-family: 'Montserrat', sans-serif;
-}
-
 html, body {
+    font-family: 'Montserrat', sans-serif;
     padding: 0;
     margin: 0;
 
-    .dark-mode &{
+    @include dark{
         color: #fff;
         background: $backcolor__dark;
     }
 }
+
+
 </style>
 
 //global style no-scoped of contents
@@ -252,12 +247,16 @@ html, body {
     }
 
     a{
-        color: #000;
+        
 
         font-weight: bold;
 
-        .dark-mode &{
+        @include dark{
             color: #fff;
+        }
+        
+        @include light{
+            color: #000;
         }
     }
 }
