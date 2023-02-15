@@ -40,7 +40,7 @@ export default defineNuxtConfig({
             ],
             meta: [ 
                 { name: 'description', content: 'Site web de la Féderation Syncale Etudiante (FSE) de Rennes.' },
-            ],    
+            ],
         }  
     },
 
@@ -56,5 +56,4 @@ export default defineNuxtConfig({
         preset: 'node_cluster' 
     },
 
-    
 })

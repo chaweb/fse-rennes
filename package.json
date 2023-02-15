@@ -17,9 +17,11 @@
   },
   "dependencies": {
     "@nuxtjs/style-resources": "^1.2.1",
+    "@vitejs/plugin-vue": "^4.0.0",
     "fs": "^0.0.1-security",
     "fs-extra": "^11.1.0",
     "gh-pages": "^5.0.0",
-    "gh-pages-deploy": "^0.5.1"
+    "gh-pages-deploy": "^0.5.1",
+    "sass": "^1.58.1"
   }
 }
