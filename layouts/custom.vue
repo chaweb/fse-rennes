@@ -1,20 +1,5 @@
 <template>
     <main>
-        <nav class="nav">
-            <img src="/fseRennes.png" alt="logo de la fse de Rennes" class="nav__icon">
-            <navButton to="/">Rennes</navButton>
-            <navButton to="/adhesion">adhésion</navButton>
-            <navButton to="/cas">Fac beaulieu</navButton>
-            <navButton to="/csr">CSR</navButton>
-
-            <div class="nav__color">
-                <select v-model="$colorMode.preference">
-                    <option value="system">system</option>
-                    <option value="light">lumineux</option>
-                    <option value="dark">sombre</option>
-                </select>
-            </div>
-        </nav>
         <slot/>
     </main>
 </template>

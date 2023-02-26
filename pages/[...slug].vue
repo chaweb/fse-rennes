@@ -1,14 +1,7 @@
 <template>
 <div class="content">
     <article class="content__article" >
-        <ContentDoc>
-            <template #not-found>
-                <h1>error 404</h1>
-                <p>la page que vous cherchez n'existe pas.</p> 
-                <p>veillez contacter un.e responsables de la FSE si cela n'est pas normal</p>
-                <nuxtLink to="/">pour revenir à l'accueil</nuxtLink>
-            </template>
-        </ContentDoc>
+        not available
     </article>
     <div class="content__network">
         <p>FSE

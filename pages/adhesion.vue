@@ -1,5 +1,5 @@
 <template>
 <main>
-    <paypal :montant="5"></paypal>
+    site  not available
 </main>
 </template>
