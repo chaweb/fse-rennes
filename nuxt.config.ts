@@ -47,13 +47,25 @@ export default defineNuxtConfig({
     modules: [
         '@nuxt/content',
         '@nuxtjs/device',
-        '@nuxtjs/color-mode'
+        '@nuxtjs/color-mode',
+        ['nuxt-directus', {
+           url:"https://admin.chaweb.fr"
+        }],
+        ['@pinia/nuxt',{
+            autoImports: ['defineStore', 'acceptHMRUpdate'],
+        }]
     ],
+
+    imports: {
+        dirs: ['./stores'],
+    },
+
     devServer:{
         port:1080
     },
     nitro:{
         preset: 'node_cluster' 
     },
+
 
 })

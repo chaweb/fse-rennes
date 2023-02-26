@@ -10,7 +10,7 @@ export default {
     props: ['montant'],
     mounted: function () {
       const script = document.createElement("script");
-      script.src = `https://www.paypal.com/sdk/js?client-id=Acm_7wjqghIbsHtkLka7iLWvNspbG38wGM7q1au5S10HALquJNJH7ZW7QxTGc5fX30Vi6EJB5kkLf3Lx`;
+      script.src = `https://www.paypal.com/sdk/js?client-id=Acm_7wjqghIbsHtkLka7iLWvNspbG38wGM7q1au5S10HALquJNJH7ZW7QxTGc5fX30Vi6EJB5kkLf3Lx&currency=EUR`;
       script.addEventListener("load", this.setLoaded);
       document.body.appendChild(script);
     },
@@ -30,7 +30,7 @@ export default {
             return actions.order.create({
               purchase_units: [{
                 amount: {
-                  value: montant
+                  value: montant,
                 }
               }]
             });
@@ -41,6 +41,9 @@ export default {
               // This function shows a transaction success message to your buyer.
               alert('Transaction completed by ' + details.payer.name.given_name);
             });
+          },
+          onCancel : function (data) {
+            alert("Transaction annulée !");
           }
         }).render("#paypal-button-container");
       }

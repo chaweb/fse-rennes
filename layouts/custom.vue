@@ -18,6 +18,10 @@
         <slot/>
     </main>
 </template>
+<script setup>
+
+    const colorMode = useColorMode()
+</script>
 
 <style lang="scss" scoped>
 
