@@ -60,9 +60,9 @@ main
     align-items: center
     max-width: 1250px
     h2
-        color: #333
+        color: #252525
         font-weight: 600
-        padding: 0 50px
+        text-decoration: underline
     .grid
         display: flex
         max-width: 550px
