@@ -151,5 +151,9 @@ main
                     transform: scale(1.2)
                     color: #000
                     top: 100%
-            
+        
+        @media (hover: none)
+            div
+                top: 100%
+                transform: scale(.75)
 </style>
