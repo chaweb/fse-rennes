@@ -47,7 +47,8 @@ export default defineNuxtConfig({
     modules: [
         '@nuxt/content',
         '@nuxtjs/device',
-        '@nuxtjs/color-mode'
+        '@nuxtjs/color-mode',
+        'nuxt-icon'
     ],
     devServer:{
         port:1080
