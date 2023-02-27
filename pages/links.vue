@@ -121,6 +121,7 @@ main
             transition: .3s
             color: #000
         svg
+            color: white
             z-index: 1
             background-color: #a7a7a7
             border-radius: 10px
@@ -140,7 +141,7 @@ main
             &.lien
                 background: #0cc
             &.mail
-                background: #2f8
+                background: #2a4
         @media (hover: hover)
             &:hover
                 color: #c70001 !important
