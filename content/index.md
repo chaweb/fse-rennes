@@ -1,7 +1,13 @@
 ---
 title: 'FSE rennes'
-description: 'nous sommes la FSE de Rennes'
+description: 'la FSE de Rennes'
 ---
 
-# Nous sommes un syndicat étudiant.es sur Rennes !
+# Nous sommes un syndicat **étudiant.es** sur Rennes !
+
+## Qu'est que la FSE ?
+
+## Comment est-elle construtuite ? 
+
+
 

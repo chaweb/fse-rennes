@@ -1,10 +1,46 @@
 <template>
     <main>
-        <slot/>
+        <nav class="nav">
+            <img src="/fseRennes.png" alt="logo de la fse de Rennes" class="nav__icon">
+            <navButton to="/">Rennes</navButton>
+            <navButton to="/adhesion">adhésion</navButton>
+            <navButton to="/cas">Fac beaulieu</navButton>
+            <navButton to="/csr">CSR</navButton>
+            <navButton to="/articles">blogs</navButton>
+
+            <div class="nav__color">
+                <select v-model="$colorMode.preference">
+                    <option value="system">system</option>
+                    <option value="light">lumineux</option>
+                    <option value="dark">sombre</option>
+                </select>
+            </div>
+        </nav>
+        
+        <div class="content">
+            <slot/>
+            <div class="content__network">
+                <p>FSE
+                    <br><a href="https://www.instagram.com/fse_rennes/" id="insta">instagram</a>
+                    <br><a href="https://twitter.com/fse_rennes/" id="twitter">twitter</a>
+                    <br><a href="https://www.facebook.com/FSE.Rennes" id="facebook">facebook</a>
+                </p>
+                <p>CSR
+                    <br><a href="https://www.instagram.com/csr_rennes/" id="insta">instagram</a>
+                    <br><a href="https://twitter.com/csr_rennes/" id="twitter">twitter</a>
+                </p>
+                <p>national
+                    <br><a href="https://fse-national.fr" id="web">site official</a>
+                    <br><a href="https://www.instagram.com/fse_natio/" id="insta">insta</a>
+                    <br><a href="https://twitter.com/fse_natio/" id="twitter">twitter</a>
+                    <br><a href="https://www.facebook.com/FSE.natio/" id="facebook">facebook</a>
+                    <br><a href="https://discord.gg/rdbjyKYSdg" id="discord">discord</a>
+                </p>
+            </div>
+        </div>
     </main>
 </template>
 <script setup>
-
     const colorMode = useColorMode()
 </script>
 
@@ -14,6 +50,7 @@ main {
     @include screen('+xl') {
         padding-top:100px;
     }
+
 }
 
 .nav{ 
@@ -97,5 +134,61 @@ main {
 
     }
 
+}
+
+.content{
+    width: 100vw;
+    height: auto;
+
+
+    @include flexbox('', 'center');
+
+    flex-direction: column;
+
+
+    &__article{
+        width: 100vw;
+        max-width: 980px;
+        margin: 2em auto 0 auto;
+
+        background-color: #fff;
+
+        @include dark{
+            color: #fff;
+            background: $backcolor__dark;
+        }
+    }
+
+    @include screen('+2xl') {
+        &__network{
+            width: 125px;
+            position: fixed;
+            right: 5px;
+
+            flex-direction: column ;
+
+        }
+    }
+
+    &__network{
+        @include flexbox('', 'center');
+
+        margin: 100px 0;
+        p {
+            margin: 6px 20px;
+            
+            font-weight: bold;
+
+            a {
+                font-weight: initial;
+                text-decoration: none;
+
+                transition: .3s scale;
+                &:hover{
+                    scale: 1.2;
+                }
+            }
+        }
+    }
 }
 </style>

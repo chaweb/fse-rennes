@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import adh0 from "~~/components/adh/adh-0.vue"
+    import adh0 from "~/components/adh/adh-0.vue"
 
     definePageMeta({ layout: 'custom' })
     
@@ -25,6 +25,10 @@ import adh0 from "~~/components/adh/adh-0.vue"
 </script>
 
 <style lang="scss" scoped>
+main{
+    min-width: 45vw;
+    padding-top: 20px;
+}
 .progress{
     position: relative;
     width: 100px;

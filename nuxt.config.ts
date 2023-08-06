@@ -53,7 +53,8 @@ export default defineNuxtConfig({
         }],
         ['@pinia/nuxt',{
             autoImports: ['defineStore', 'acceptHMRUpdate'],
-        }]
+        }],
+        'markdown-it'
     ],
 
     imports: {
@@ -66,6 +67,4 @@ export default defineNuxtConfig({
     nitro:{
         preset: 'node_cluster' 
     },
-
-
 })

@@ -1,26 +1,15 @@
 <template>
-<div class="content">
+<div>
     <article class="content__article" >
-        not available
+        <ContentDoc>
+            <template #not-found>
+                <h1>error 404</h1>
+                <p>la page que vous cherchez n'existe pas.</p>
+                <p>veillez contacter un.e responsables de la FSE si cela n'est pas normal</p>
+                <nuxtLink to="/">pour revenir à l'accueil</nuxtLink>
+            </template>
+        </ContentDoc>
     </article>
-    <div class="content__network">
-        <p>FSE
-            <br><a href="https://www.instagram.com/fse_rennes/" id="insta">instagram</a>
-            <br><a href="https://twitter.com/fse_rennes/" id="twitter">twitter</a>
-            <br><a href="https://www.facebook.com/FSE.Rennes" id="facebook">facebook</a>
-        </p>
-        <p>CSR
-            <br><a href="https://www.instagram.com/csr_rennes/" id="insta">instagram</a>
-            <br><a href="https://twitter.com/csr_rennes/" id="twitter">twitter</a>
-        </p>
-        <p>national
-            <br><a href="https://fse-national.fr" id="web">site official</a>
-            <br><a href="https://www.instagram.com/fse_natio/" id="insta">insta</a>
-            <br><a href="https://twitter.com/fse_natio/" id="twitter">twitter</a>
-            <br><a href="https://www.facebook.com/FSE.natio/" id="facebook">facebook</a>
-            <br><a href="https://discord.gg/rdbjyKYSdg" id="discord">discord</a>
-        </p>
-    </div>
 </div>
 </template>
 
@@ -34,63 +23,9 @@
 
 //style of the main page
 
-<style lang="scss" scoped>
-
-.content{
-    width: 100vw;
-    height: auto;
+<style lang="scss">
 
 
-    @include flexbox('', 'center');
-
-    flex-direction: column;
-
-
-    &__article{
-        width: 100vw;
-        max-width: 980px;
-        margin: 2em auto 0 auto;
-
-        background-color: #fff;
-
-        @include dark{
-            color: #fff;
-            background: $backcolor__dark;
-        }
-    }
-
-    @include screen('+2xl') {
-        &__network{
-            width: 125px;
-            position: fixed;
-            right: 5px;
-
-            flex-direction: column ;
-
-        }
-    }
-
-    &__network{
-        @include flexbox('', 'center');
-
-        margin: 100px 0;
-        p {
-            margin: 6px 20px;
-            
-            font-weight: bold;
-
-            a {
-                font-weight: initial;
-                text-decoration: none;
-
-                transition: .3s scale;
-                &:hover{
-                    scale: 1.2;
-                }
-            }
-        }
-    }
-}
 
 </style>
 
@@ -121,15 +56,19 @@ html, body {
 <style lang="scss">
 .content{
     h1, h2 {
-        text-align: center;
         font-family: 'Kollektif', sans-serif;
     }
     h1{
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
     h2{
         font-size: 2rem;
     }
+
+    strong{
+        font-weight: bolder;
+    }
+
 
     a{
         
